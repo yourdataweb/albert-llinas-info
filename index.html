@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Albert Llinás García | Co-Fundador &amp; Director en S3GRUP</title>
+    <meta name="description" content="Perfil profesional de Albert Llinás García, Co-Fundador y Director en S3GRUP. Experto en digitalización de PRL y EHS." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* ─── Hero ─── */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1a3a4a 50%, #0f172a 100%);
+            color: #fff;
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; left: 0; right: 0;
+            height: 60px;
+            background: #f8fafc;
+            clip-path: ellipse(70% 100% at 50% 100%);
+        }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .hero .fullname { font-size: 0.95rem; color: #94a3b8; margin-bottom: 4px; }
+        .hero .title { font-size: 1.2rem; font-weight: 400; color: #94a3b8; margin-bottom: 6px; }
+        .hero .company { font-size: 1.05rem; color: #38bdf8; font-weight: 600; }
+        .hero .location { font-size: 0.85rem; color: #64748b; margin-top: 6px; }
+        .hero .badge {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        /* ─── Sections ─── */
+        section { padding: 60px 0; }
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon { font-size: 1.4rem; }
+
+        /* ─── Cards ─── */
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+            margin-bottom: 24px;
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+        /* ─── Timeline ─── */
+        .timeline { position: relative; padding-left: 28px; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px; top: 8px; bottom: 8px;
+            width: 2px;
+            background: #cbd5e1;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            padding-left: 20px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px; top: 6px;
+            width: 14px; height: 14px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #2563eb;
+        }
+        .timeline-item .date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .timeline-item h3 { font-size: 1.1rem; font-weight: 700; margin: 4px 0 2px; }
+        .timeline-item .sub { font-size: 0.92rem; color: #64748b; }
+
+        /* ─── Grid ─── */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+
+        .stat-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 28px 20px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .stat-card .num { font-size: 2rem; font-weight: 800; color: #2563eb; }
+        .stat-card .label { font-size: 0.85rem; color: #64748b; margin-top: 4px; }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            background: #eff6ff;
+            color: #1d4ed8;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 4px 4px 4px 0;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* ─── Social ─── */
+        .social-links {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: 1px solid #e2e8f0;
+            background: #fff;
+            color: #1e293b;
+            transition: all 0.2s;
+        }
+        .social-link:hover {
+            border-color: #2563eb;
+            background: #eff6ff;
+            color: #1d4ed8;
+        }
+        .social-link.linkedin { border-color: #0a66c2; color: #0a66c2; }
+        .social-link.linkedin:hover { background: #e8f4fd; }
+        .social-link.s3grup { border-color: #059669; color: #059669; }
+        .social-link.s3grup:hover { background: #ecfdf5; }
+
+        /* ─── Footer ─── */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #e2e8f0;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+
+        /* ─── Responsive ─── */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-2, .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<header class="hero">
+    <div class="container">
+        <h1>Albert Llinás García</h1>
+        <p class="fullname">Francisco Alberto Llinas Garcia</p>
+        <p class="title">Co-Fundador &amp; Director</p>
+        <p class="company">S3GRUP · S3GRUP NEXTTECH SL</p>
+        <p class="location">📍 Vilanova i la Geltrú, Barcelona</p>
+        <span class="badge">🛡️ Digitalización de PRL &amp; EHS</span>
+    </div>
+</header>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section>
+    <div class="container">
+        <div class="section-title"><span class="icon">👤</span> Sobre Albert</div>
+        <div class="card">
+            <p style="font-size:1.05rem; margin-bottom:16px;">
+                Emprendedor y profesional especializado en la <strong>digitalización de la Prevención de Riesgos Laborales (PRL)</strong>
+                y la gestión de <strong>Seguridad, Salud y Medio Ambiente (EHS)</strong>. Como Co-Fundador y Director de S3GRUP,
+                lidera el departamento comercial de una compañía tecnológica que transforma la gestión preventiva
+                mediante <strong>evidencia fotográfica, control visual y procesos 100% digitales</strong>.
+            </p>
+            <p style="color:#475569;">
+                Su misión: ayudar a los equipos de PRL, EHS, responsables y directivos a reducir tiempos
+                y ganar eficiencia operativa, eliminando el papeleo y los procesos manuales. Con sede en
+                <strong>Vilanova i la Geltrú</strong>, Albert combina visión comercial con un profundo conocimiento
+                de las necesidades normativas y operativas del sector de la seguridad laboral.
+            </p>
+        </div>
+
+        <div class="grid-3">
+            <div class="stat-card">
+                <div class="num">Co-Fundador</div>
+                <div class="label">S3GRUP NEXTTECH SL</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">500+</div>
+                <div class="label">Conexiones en LinkedIn</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">2025</div>
+                <div class="label">Fundación de la empresa</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ EXPERIENCE ═══════ -->
+<section style="background:#f1f5f9;">
+    <div class="container">
+        <div class="section-title"><span class="icon">💼</span> Trayectoria</div>
+
+        <div class="card">
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2025 — Actualidad</div>
+                    <h3>Co-Fundador &amp; Director</h3>
+                    <div class="sub">S3GRUP · S3GRUP NEXTTECH SL · Vilanova i la Geltrú</div>
+                    <p style="color:#64748b; margin-top:6px; font-size:0.92rem;">
+                        Cofundador de la compañía y responsable de liderar el departamento de ventas.
+                        S3GRUP desarrolla <strong>S3</strong>, un software que transforma la prevención de riesgos laborales
+                        en una experiencia visual: control visual de la prevención sobre planos de planta,
+                        procesos 100% digitales sin papel, cumplimiento normativo garantizado y
+                        gestión de permisos de trabajo, formación, EPIs y CAE desde cualquier dispositivo.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="date">Anteriormente</div>
+                    <h3>Wholesale · Dis Electric S.A.</h3>
+                    <div class="sub">Vilanova i la Geltrú</div>
+                    <p style="color:#64748b; margin-top:6px; font-size:0.92rem;">
+                        Experiencia previa en el sector de la distribución eléctrica y materiales.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title" style="margin-top:40px;"><span class="icon">📜</span> Hitos Destacados</div>
+        <div class="card">
+            <ul style="list-style:none; line-height:2;">
+                <li>✅&ensp;<strong>Mayo 2025</strong> — Constitución de S3GRUP NEXTTECH SL (CIF B22487235).</li>
+                <li>✅&ensp;<strong>Junio 2025</strong> — Nombramiento como Administrador Solidario (BORME, inscripción 10/06/2025).</li>
+                <li>✅&ensp;<strong>2025</strong> — Lanzamiento de S3, la plataforma de digitalización visual de PRL.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ COMPANY ═══════ -->
+<section>
+    <div class="container">
+        <div class="section-title"><span class="icon">🏢</span> S3GRUP</div>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="margin-bottom:8px;">La Startup</h3>
+                <p style="color:#475569;">
+                    <strong>S3GRUP NEXTTECH SL</strong> es una empresa tecnológica con sede en
+                    <strong>Vilanova i la Geltrú</strong> enfocada en la digitalización de la
+                    Prevención de Riesgos Laborales (PRL) y la gestión de Seguridad, Salud y
+                    Medio Ambiente (EHS).
+                </p>
+                <p style="color:#475569; margin-top:10px;">
+                    Su producto estrella, <strong>S3</strong>, es un software que convierte el papeleo
+                    en evidencias fotográficas y control visual, permitiendo a los equipos de PRL
+                    gestionar la seguridad laboral de forma eficiente y en tiempo real.
+                </p>
+                <p style="color:#475569; margin-top:10px;">
+                    La compañía nace con la visión de <em>"Uniendo fuerzas para un entorno seguro"</em>,
+                    ofreciendo una plataforma que se adapta a los procesos de cada empresa,
+                    no al revés.
+                </p>
+            </div>
+            <div class="card">
+                <h3 style="margin-bottom:8px;">Datos Clave</h3>
+                <table style="width:100%; border-collapse:collapse; font-size:0.92rem;">
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">Razón Social</td><td style="padding:6px 0;">S3GRUP NEXTTECH SL</td></tr>
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">CIF</td><td style="padding:6px 0;">B22487235</td></tr>
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">Sede</td><td style="padding:6px 0;">Rbla. Exposició, 59, Vilanova i la Geltrú</td></tr>
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">Constitución</td><td style="padding:6px 0;">23 de mayo de 2025</td></tr>
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">Capital Social</td><td style="padding:6px 0;">3.000 €</td></tr>
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">Órgano Admón.</td><td style="padding:6px 0;">Administradores Solidarios</td></tr>
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">Producto</td><td style="padding:6px 0;">S3 · Software de PRL visual</td></tr>
+                    <tr><td style="padding:6px 0; font-weight:600; color:#475569;">Web</td><td style="padding:6px 0;"><a href="https://s3grup.com" target="_blank" style="color:#2563eb;">s3grup.com</a></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top:0;">
+            <h3 style="margin-bottom:12px;">¿Qué hace S3?</h3>
+            <div class="grid-3">
+                <div style="padding:12px; background:#f8fafc; border-radius:10px; text-align:center;">
+                    <div style="font-size:2rem; margin-bottom:4px;">🗺️</div>
+                    <strong>Control Visual</strong>
+                    <p style="font-size:0.82rem; color:#64748b; margin-top:4px;">Riesgos, zonas y equipos en tiempo real sobre planos</p>
+                </div>
+                <div style="padding:12px; background:#f8fafc; border-radius:10px; text-align:center;">
+                    <div style="font-size:2rem; margin-bottom:4px;">📱</div>
+                    <strong>100% Digital</strong>
+                    <p style="font-size:0.82rem; color:#64748b; margin-top:4px;">Firma digital, formación, EPIs y permisos desde cualquier dispositivo</p>
+                </div>
+                <div style="padding:12px; background:#f8fafc; border-radius:10px; text-align:center;">
+                    <div style="font-size:2rem; margin-bottom:4px;">✅</div>
+                    <strong>Cumplimiento Normativo</strong>
+                    <p style="font-size:0.82rem; color:#64748b; margin-top:4px;">Evaluaciones de riesgos vivas y actualizadas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ SKILLS ═══════ -->
+<section style="background:#f1f5f9;">
+    <div class="container">
+        <div class="section-title"><span class="icon">🎯</span> Áreas de Especialización</div>
+        <div class="card">
+            <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
+                <span class="skill-tag">🛡️ Prevención de Riesgos Laborales (PRL)</span>
+                <span class="skill-tag">🌿 EHS / HSE</span>
+                <span class="skill-tag">💻 Digitalización de Procesos</span>
+                <span class="skill-tag">📸 Evidencia Fotográfica</span>
+                <span class="skill-tag">📊 Dirección Comercial</span>
+                <span class="skill-tag">🚀 Emprendimiento</span>
+                <span class="skill-tag">📋 Gestión de CAE</span>
+                <span class="skill-tag">👷 EPIs &amp; Seguridad Laboral</span>
+                <span class="skill-tag">🔄 Transformación Digital</span>
+                <span class="skill-tag">📱 Software como Servicio (SaaS)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ SOCIAL ═══════ -->
+<section>
+    <div class="container">
+        <div class="section-title"><span class="icon">🔗</span> Conectar</div>
+        <div class="card">
+            <p style="margin-bottom:16px; color:#475569;">
+                Sigue a Albert Llinás en sus redes profesionales:
+            </p>
+            <div class="social-links">
+                <a class="social-link linkedin" href="https://es.linkedin.com/in/albert-llin%C3%A1s" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a class="social-link s3grup" href="https://s3grup.com" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    s3grup.com
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+    <div class="container">
+        <p style="margin-bottom:4px;">
+            Información recopilada de fuentes públicas (LinkedIn, BORME, DatosCif, S3GRUP).
+            Última actualización: junio 2026.
+        </p>
+        <p style="font-size:0.78rem;">
+            Esta es una página informativa independiente. Los datos provienen de fuentes abiertas.
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>
